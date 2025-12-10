@@ -41,6 +41,7 @@ npx json-server --watch db.json --port 4000
 This serves your questions at http://localhost:4000/questions.
 
 **Start the React app**
+
 npm run dev
 
 Open http://localhost:5173/ in your browser to see the app.
@@ -51,6 +52,7 @@ To manage the current question index, selected option, score, and timer.
 
 -useEffect
 Fetches questions from the API when the app loads.
+
 Handles timer countdown and cleanup when questions change.
 
 -useMemo
