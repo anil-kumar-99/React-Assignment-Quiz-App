@@ -1,22 +1,24 @@
-A simple, interactive quiz application built with React and Vite, using JSON Server as a mock backend. Users answer multiple-choice questions under a time limit, see their results instantly, and can restart the quiz to try again.
+#  Timed Quiz Game – React + JSON Server
 
-**Features**
+A simple, interactive quiz application built with **React** and **Vite**, using **JSON Server** as a mock backend. Users answer multiple-choice questions under a time limit, see their results instantly, and can restart the quiz to try again.
 
--Fetches questions from a mock REST API using fetch.
+---
 
--Timer for each question  with automatic submission on timeout.
+##  Features
 
--Shows one question at a time and calculates the score at the end.
+* Fetches questions from a mock REST API using `fetch`.
+* Timer for each question ( 30 seconds) with automatic submission on timeout.
+* Shows one question at a time and calculates the score at the end.
+* Submit button for manual answer submission.
+* Restart quiz functionality.
+* Clean, responsive UI using **pure CSS** (no Tailwind or external libraries).
+* Implements **React hooks** (`useState`, `useEffect`, `useMemo`) and a **custom hook** for quiz logic.
 
--Submit button for manual answer submission.
+---
 
--Restart quiz functionality.
+##  Project Structure
 
--Clean, responsive UI using pure CSS. 
-
--Implements React hooks (useState, useEffect, useMemo) and a custom hook for quiz logic.
-
-**Project Structure**
+```
 timed-quiz-game/
 │── src/
 │   ├── App.jsx
@@ -28,35 +30,69 @@ timed-quiz-game/
 │── db.json
 │── package.json
 │── README.md
+```
 
+* `App.jsx` – Main app, handles fetching questions.
+* `Quiz.jsx` – Displays questions, options, timer, and submit button.
+* `Result.jsx` – Shows final score and restart option.
+* `useQuiz.js` – Custom hook for handling question navigation and scoring.
+* `styles.css` – Simple, modern styling without external libraries.
 
+---
 
-**Install dependencies**
+## ⚡ How to Set Up
+
+1. **Clone the repo**
+
+```bash
+git clone <your-repo-url>
+cd timed-quiz-game
+```
+
+2. **Install dependencies**
+
+```bash
 npm install
+```
 
-Start JSON Server 
+3. **Start JSON Server** (mock backend)
 
+```bash
 npx json-server --watch db.json --port 4000
+```
 
-This serves your questions at http://localhost:4000/questions.
+> This serves your questions at `http://localhost:4000/questions`.
 
-**Start the React app**
+4. **Start the React app**
 
+```bash
 npm run dev
+```
 
-Open http://localhost:5173/ in your browser to see the app.
+> Open `http://localhost:5173/` in your browser to see the app.
 
-**How React Hooks Are Used**
--useState
-To manage the current question index, selected option, score, and timer.
+---
 
--useEffect
-Fetches questions from the API when the app loads.
+##  How React Hooks Are Used
 
-Handles timer countdown and cleanup when questions change.
+### **useState**
 
--useMemo
-Computes derived values like final percentage score efficiently.
+* To manage the current question index, selected option, score, and timer.
 
--Custom Hook (useQuiz)
-Encapsulates quiz logic: moving to the next question, updating score, and resetting the quiz.
+### **useEffect**
+
+* Fetches questions from the API when the app loads.
+* Handles timer countdown and cleanup when questions change.
+
+### **useMemo**
+
+* Computes derived values like final percentage score efficiently.
+
+### **Custom Hook (`useQuiz`)**
+
+* Encapsulates quiz logic: moving to the next question, updating score, and resetting the quiz.
+
+---
+
+
+
