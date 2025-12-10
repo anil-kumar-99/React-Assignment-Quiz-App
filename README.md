@@ -2,13 +2,19 @@ A simple, interactive quiz application built with React and Vite, using JSON Ser
 
 **Features**
 
-Fetches questions from a mock REST API using fetch.
-Timer for each question  with automatic submission on timeout.
-Shows one question at a time and calculates the score at the end.
-Submit button for manual answer submission.
-Restart quiz functionality.
-Clean, responsive UI using pure CSS. 
-Implements React hooks (useState, useEffect, useMemo) and a custom hook for quiz logic.
+-Fetches questions from a mock REST API using fetch.
+
+-Timer for each question  with automatic submission on timeout.
+
+-Shows one question at a time and calculates the score at the end.
+
+-Submit button for manual answer submission.
+
+-Restart quiz functionality.
+
+-Clean, responsive UI using pure CSS. 
+
+-Implements React hooks (useState, useEffect, useMemo) and a custom hook for quiz logic.
 
 **Project Structure**
 timed-quiz-game/
