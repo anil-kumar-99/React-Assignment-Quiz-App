@@ -3,7 +3,7 @@ A simple, interactive quiz application built with React and Vite, using JSON Ser
 **Features**
 
 Fetches questions from a mock REST API using fetch.
-Timer for each question (e.g., 30 seconds) with automatic submission on timeout.
+Timer for each question  with automatic submission on timeout.
 Shows one question at a time and calculates the score at the end.
 Submit button for manual answer submission.
 Restart quiz functionality.
@@ -27,8 +27,11 @@ timed-quiz-game/
 
 **Install dependencies**
 npm install
+
 Start JSON Server 
+
 npx json-server --watch db.json --port 4000
+
 This serves your questions at http://localhost:4000/questions.
 
 **Start the React app**
