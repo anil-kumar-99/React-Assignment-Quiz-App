@@ -1,16 +1,51 @@
-# React + Vite
+A simple, interactive quiz application built with React and Vite, using JSON Server as a mock backend. Users answer multiple-choice questions under a time limit, see their results instantly, and can restart the quiz to try again.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Features**
 
-Currently, two official plugins are available:
+Fetches questions from a mock REST API using fetch.
+Timer for each question (e.g., 30 seconds) with automatic submission on timeout.
+Shows one question at a time and calculates the score at the end.
+Submit button for manual answer submission.
+Restart quiz functionality.
+Clean, responsive UI using pure CSS. 
+Implements React hooks (useState, useEffect, useMemo) and a custom hook for quiz logic.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Project Structure**
+timed-quiz-game/
+│── src/
+│   ├── App.jsx
+│   ├── Quiz.jsx
+│   ├── Result.jsx
+│   ├── hooks/
+│   │   └── useQuiz.js
+│   ├── styles.css
+│── db.json
+│── package.json
+│── README.md
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+**Install dependencies**
+npm install
+Start JSON Server 
+npx json-server --watch db.json --port 4000
+This serves your questions at http://localhost:4000/questions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Start the React app**
+npm run dev
+
+Open http://localhost:5173/ in your browser to see the app.
+
+**How React Hooks Are Used**
+-useState
+To manage the current question index, selected option, score, and timer.
+
+-useEffect
+Fetches questions from the API when the app loads.
+Handles timer countdown and cleanup when questions change.
+
+-useMemo
+Computes derived values like final percentage score efficiently.
+
+-Custom Hook (useQuiz)
+Encapsulates quiz logic: moving to the next question, updating score, and resetting the quiz.
